@@ -1,14 +1,18 @@
 package com.example.xo_game;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class XO_Game extends AppCompatActivity {
+public class XO_Game<MainActivity> extends AppCompatActivity {
 
     TextView playerOneScoreTV;
     TextView playerTwoScoreTV;
@@ -42,12 +46,15 @@ public class XO_Game extends AppCompatActivity {
             initBoard();
             playerOneScore++;
             playerOneScoreTV.setText(playerOneScore + "");
+            alertDialog(this, "Player 1 Won!", "Do you want to play again?");
         } else if (checkWinner("O")) {
             initBoard();
             playerTwoScore++;
             playerTwoScoreTV.setText(playerTwoScore + "");
+            alertDialog(this, "Player 2 Won!", "Do you want to play again?");
         } else if (counter == 9) {
             initBoard();
+            alertDialog(this, "Draw!", "Do you want to play again?");
         }
     }
 
@@ -84,6 +91,27 @@ public class XO_Game extends AppCompatActivity {
         }
 
         return false;
+    }
+
+    private void alertDialog(Context context, String title, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(message);
+        builder.setTitle(title);
+        builder.setCancelable(false);
+        builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+            dialog.dismiss();
+        });
+
+        builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+            dialog.cancel();
+            playerOneScore = 0;
+            playerTwoScore = 0;
+            playerOneScoreTV.setText("0");
+            playerTwoScoreTV.setText("0");
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 }
