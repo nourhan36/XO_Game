@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/xoGame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/btn"
@@ -70,6 +71,8 @@
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="0"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:cornerRadius="20dp"
@@ -79,7 +82,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_scorePlayer1"
-        android:tag="0"
         tools:text="X" />
 
 
@@ -89,6 +91,8 @@
         android:layout_height="120dp"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="1"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:cornerRadius="20dp"
@@ -97,7 +101,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn1"
         app:layout_constraintTop_toBottomOf="@+id/tv_scorePlayer1"
-        android:tag="1"
         tools:text="O" />
 
     <com.google.android.material.button.MaterialButton
@@ -105,6 +108,8 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="2"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:backgroundTint="@color/white"
@@ -113,7 +118,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn2"
-        android:tag="2"
         app:layout_constraintTop_toBottomOf="@+id/tv_scorePlayer1" />
 
     <com.google.android.material.button.MaterialButton
@@ -122,6 +126,8 @@
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="3"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:backgroundTint="@color/white"
@@ -132,7 +138,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn1"
-        android:tag="3"
         tools:text="O" />
 
 
@@ -141,6 +146,8 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="4"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:backgroundTint="@color/white"
@@ -149,14 +156,15 @@
         app:layout_constraintEnd_toStartOf="@+id/btn6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn4"
-        app:layout_constraintTop_toBottomOf="@+id/btn2"
-        android:tag="4"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn2" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn6"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="5"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:backgroundTint="@color/white"
@@ -165,8 +173,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn5"
-        app:layout_constraintTop_toBottomOf="@+id/btn3"
-        android:tag="5"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn3" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn7"
@@ -174,6 +181,8 @@
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="6"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:backgroundTint="@color/white"
@@ -184,7 +193,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn4"
-        android:tag="6"
         tools:text="X" />
 
     <com.google.android.material.button.MaterialButton
@@ -192,6 +200,8 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="7"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:backgroundTint="@color/white"
@@ -200,14 +210,15 @@
         app:layout_constraintEnd_toStartOf="@+id/btn9"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn7"
-        app:layout_constraintTop_toBottomOf="@+id/btn5"
-        android:tag="7"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn5" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn9"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:fontFamily="@font/bevan"
+        android:onClick="onPlayerClick"
+        android:tag="8"
         android:textColor="@color/darkPurple"
         android:textSize="40sp"
         app:backgroundTint="@color/white"
@@ -216,8 +227,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn8"
-        app:layout_constraintTop_toBottomOf="@+id/btn6"
-        android:tag="8"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn6" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
